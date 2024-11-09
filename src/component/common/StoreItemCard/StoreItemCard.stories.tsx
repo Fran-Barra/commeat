@@ -1,6 +1,9 @@
 import {Meta, StoryObj} from "@storybook/react";
 import StoreItemCard from "./index.tsx";
 
+import Flour from "../../../../src/assets/Sample/flour.png";
+
+
 const meta: Meta<typeof StoreItemCard> ={
     title:'StoreItemCard',
     component:StoreItemCard,
@@ -20,6 +23,7 @@ export const Default: Story = {
         item: {
             name: 'Item 1',
             price: 1000,
+            img: Flour
         },
     },
     render: (args) => <StoreItemCard {...args}/>
