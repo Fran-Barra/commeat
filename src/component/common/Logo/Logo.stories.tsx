@@ -16,12 +16,12 @@ const meta: Meta<typeof Button> ={
 
 export default meta
 
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<typeof Logo>
 
 export const Default: Story = {
     name:'Default',
     args: {
-        variant: 'light',  // Set 'light' as the default value for the variant
+        variant: 'light',
     },
     render: (args) => <Logo {...args}/>
 }

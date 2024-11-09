@@ -1,6 +1,6 @@
 
-import DarkLogoSvg from '../../../assets/logo-dark-gray.svg';
-import LightLogoSvg from '../../../assets/logo-light-gray.svg';
+import DarkLogoSvg from '../../../assets/Logo/logo-dark-gray.svg';
+import LightLogoSvg from '../../../assets/Logo/logo-light-gray.svg';
 
 export interface LogoProps {
     variant: 'light' | 'dark';
