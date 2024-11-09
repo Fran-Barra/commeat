@@ -9,7 +9,10 @@ const meta: Meta<typeof StoreItemCard> ={
     component:StoreItemCard,
     tags: ['autodocs'],
     argTypes:{
-
+        size: {
+            options: ['small', 'large'],
+            control: {type: 'radio'}
+        }
     }
 }
 
@@ -21,10 +24,25 @@ export const Default: Story = {
     name:'Default',
     args: {
         item: {
-            name: 'Item 1',
+            name: 'Harina',
             price: 1000,
-            img: Flour
+            img: Flour,
         },
+        size: 'large'
+    },
+    render: (args) => <StoreItemCard {...args}/>
+}
+
+export const WithAmount: Story = {
+    name:'WithAmount',
+    args: {
+        item: {
+            name: 'Harina',
+            price: 1000,
+            img: Flour,
+        },
+        amount: 2,
+        size: 'small'
     },
     render: (args) => <StoreItemCard {...args}/>
 }

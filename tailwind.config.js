@@ -43,10 +43,8 @@ export default {
           500: '#EE3B2B'
         },
       },
-
-
       fontSize: {
-        p3 : '12px'
+        small : '12px'
       }
     },
   },
