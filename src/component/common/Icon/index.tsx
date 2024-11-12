@@ -14,11 +14,11 @@ export interface IconProps {
 const Icon = ({variant, color= 'icon', width, height}: IconProps) => {
 
     const colors = {
-        primary: '#EFA92E',
-        secondary: '#2E8BF0',
-        icon: '#6E7174',
-        white: '#fff',
-        black: '#000'
+        primary: 'primary-500',
+        secondary: 'secondary-500',
+        icon: 'gray-600',
+        white: 'white',
+        black: 'black'
     }
 
     switch (variant) {
