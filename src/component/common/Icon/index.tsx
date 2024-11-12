@@ -1,25 +1,37 @@
-import Cart from '../../../assets/Icon/cart.svg';
-import Trash from '../../../assets/Icon/trash.svg';
-import ThreeDots from '../../../assets/Icon/three-dots.svg';
-import PlusWhite from '../../../assets/Icon/plus-white.svg';
-import Search from '../../../assets/Icon/search.svg';
+import Plus from "../../../assets/Icon/Plus";
+import Cart from "../../../assets/Icon/Cart";
+import Trash from "../../../assets/Icon/Trash";
+import ThreeDots from "../../../assets/Icon/ThreeDots";
+import Subtract from "../../../assets/Icon/Subtract";
 
 export interface IconProps {
-    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus-white' | 'search';
+    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract';
+    color?: 'primary' | 'secondary' | 'icon' | 'black' | 'white'
+    width?: number
+    height?: number
 }
 
-const Icon = ({variant}: IconProps) => {
+const Icon = ({variant, color= 'icon', width, height}: IconProps) => {
+
+    const colors = {
+        primary: '#EFA92E',
+        secondary: '#2E8BF0',
+        icon: '#6E7174',
+        white: '#fff',
+        black: '#000'
+    }
+
     switch (variant) {
         case 'shopping-cart':
-            return <img src={Cart} alt="Cart" />;
+            return <Cart color={colors[color]} width={width} height={height}/>
         case 'trash':
-            return <img src={Trash} alt="Trash"/>;
+            return <Trash color={colors[color]} width={width} height={height}/>
         case 'three-dots':
-            return <img src={ThreeDots} alt="ThreeDots" />;
-        case 'plus-white':
-            return <img src={PlusWhite} alt={'PlusWhite'}/>
-        case 'search':
-            return <img src={Search} alt={'Search'}/>
+            return <ThreeDots color={colors[color]} width={width} height={height}/>
+        case 'plus':
+            return <Plus color={colors[color]} width={width} height={height}/>
+        case 'subtract':
+            return <Subtract color={colors[color]} width={width} height={height}/>
     }
 };
 
