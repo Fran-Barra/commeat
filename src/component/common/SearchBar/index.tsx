@@ -5,14 +5,14 @@ interface SearchBarProps {
     placeholder: string;
     width?: number;
     icon?: IconProps['variant'];
-    iconPosition?: 'left' | 'right'; // New prop to determine icon position
+    iconPosition?: 'left' | 'right';
 }
 
 const SearchBar = ({
                        placeholder,
                        width = 249,
                        icon,
-                       iconPosition = 'left', // Default position is left
+                       iconPosition = 'left',
                    }: SearchBarProps) => {
     const [isFocused, setIsFocused] = useState(false);
     const [hasContent, setHasContent] = useState(false);
@@ -21,18 +21,20 @@ const SearchBar = ({
         setHasContent(event.target.value.length > 0);
     };
 
+    const iconColor = hasContent ? "black" : "icon";
+
     return (
         <div className="inline-flex flex-col items-start" style={{ width: `${width}px` }}>
             <div className={`flex items-center p-3.5 gap-2 w-full rounded-lg border bg-white ${
                 (isFocused || hasContent)
-                    ? 'border-black text-black' 
-                    : 'border-gray-400 text-gray-500' 
+                    ? 'border-black text-black'
+                    : 'border-gray-400 text-gray-500'
             } font-normal leading-normal outline-none mt-2`}>
 
-                {/* Conditionally render icon on the left */}
+                {/* Renderizar el ícono condicionalmente a la izquierda */}
                 {icon && iconPosition === 'left' && (
                     <div className="flex-shrink-0 mr-2">
-                        <Icon variant={"trash"} color={"secondary"} />
+                        <Icon variant={icon} color={iconColor} />
                     </div>
                 )}
 
@@ -45,10 +47,10 @@ const SearchBar = ({
                     onChange={handleInputChange}
                 />
 
-                {/* Conditionally render icon on the right */}
+                {/* Renderizar el ícono condicionalmente a la derecha */}
                 {icon && iconPosition === 'right' && (
                     <div className="flex-shrink-0 ml-2">
-                        <Icon variant={icon} />
+                        <Icon variant={icon} color={iconColor} />
                     </div>
                 )}
             </div>
