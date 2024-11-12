@@ -27,7 +27,7 @@ const StoreItemCard = ({item, amount, size}: StoreItemCardProps) => {
 
                     </div>
                     <div className={`bg-primary-500 rounded-full ${circleClass} place-content-center justify-items-center`}>
-                        {amount ? <p className={`text-white ${textClass}`}>x{amount}</p> : <Icon variant={'plus-white'}/>}
+                        {amount ? <p className={`text-white ${textClass}`}>x{amount}</p> : <Icon variant={'plus'} color={'white'} width={12} height={12}/>}
                     </div>
                 </div>
         </div>
