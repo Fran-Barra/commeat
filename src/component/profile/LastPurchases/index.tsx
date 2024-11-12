@@ -3,7 +3,7 @@ export interface ItemPurchase{
     name: string;
     price: number;
     img: string;
-    amount: number;
+    amount: string;
 }
 
 export interface LastPurchasesProps {
@@ -17,8 +17,9 @@ const containerClass = 'w-100 flex justify-between flex-col border border-gray-3
 const baseEdgeContainer = 'flex justify-between flex-row items-center w-100 p-2';
 const itemClass = 'flex justify-between items-center w-100 p-4 border-b border-gray-300';
 const itemImageClass = 'flex justify-between items-center w-100 gap-2';
+const itemNameContainerClass = 'flex flex-col gap'
 const headerClass = baseEdgeContainer + ' border-b border-gray-300'
-const imageClass = 'w-20 h-20'
+const imageClass = 'w-20 h-20 flex items-center'
 const footerClass = baseEdgeContainer
 
 
@@ -34,7 +35,7 @@ const LastPurchases = ({date, items, buyAgain, status}: LastPurchasesProps) => {
     return (
         <div className={containerClass}>
             <div className={headerClass}>
-                <p className={'font-semibold'}>{date}</p>
+                <p className={'text-p2 font-semibold'}>{date}</p>
                 <p onClick={buyAgain} className={'text-primary-500'}>Volver a comprar</p>
             </div>
             <div>
@@ -44,19 +45,17 @@ const LastPurchases = ({date, items, buyAgain, status}: LastPurchasesProps) => {
                             <div className={imageClass}>
                                 <img src={item.img} alt={item.name}/>
                             </div>
-                            <div>
-                                <p className={''}>{item.name}</p>
-                                <p>{item.amount}</p>
+                            <div className={itemNameContainerClass}>
+                                <p className={'text-h5 text-gray-800'}>{item.name}</p>
+                                <p className={'text-p1 text-gray-500 font-bold'}>{item.amount}</p>
                             </div>
                         </div>
-                        <div>
-                            <p>${item.price}</p>
-                        </div>
+                            <p className={'text-h5 font-regular text-gray-700'}>${item.price}</p>
                     </div>
                 ))}
             </div>
             <div className={footerClass}>
-                <p>{statusText[status]}</p>
+                <p className={'text-p1 text-gray-600'}>{statusText[status]}</p>
             </div>
         </div>
     )
