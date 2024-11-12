@@ -12,13 +12,14 @@ const buttonVariant = cva(['flex item-center', 'justify-center'],{
             ],
             outlined:[
                 'bg-white text-primary-500 border border-primary-500',
+                'active:bg-gray-100',
                 'disabled:bg-grey-300 disabled:border-grey-300 disabled:text-grey-700',
             ]
         },
         size: {
-            small:['h-10 w-full px-4 py-2 text-xs'],
-            medium:['h-11 w-full px-4 py-3 text-sm'],
-            large: ['h-12 w-full px-4 py-3 text-base']
+            small:['h-10 w-full px-4 py-2 text-p3'],
+            medium:['h-11 w-full px-4 py-3 text-p2'],
+            large: ['h-12 w-full px-4 py-3 text-h6']
         }
     },
     defaultVariants: {
