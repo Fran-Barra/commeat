@@ -32,7 +32,7 @@ const SearchBar = ({
                 {/* Conditionally render icon on the left */}
                 {icon && iconPosition === 'left' && (
                     <div className="flex-shrink-0 mr-2">
-                        <Icon variant={icon} />
+                        <Icon variant={"trash"} color={"secondary"} />
                     </div>
                 )}
 
