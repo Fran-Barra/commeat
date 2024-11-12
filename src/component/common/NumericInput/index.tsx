@@ -1,6 +1,5 @@
 import {cva, VariantProps} from "class-variance-authority";
-import Plus from "../../../assets/Icon/Plus";
-import Subtract from "../../../assets/Icon/Subtract";
+import Icon from "../Icon";
 
 export interface NumericInputAttributes {
     value: number;
@@ -28,11 +27,11 @@ export interface NumericButtonProps extends NumericInputAttributes, VariantProps
 const NumericInput = ({size = 'small', value, max, handleChange, disabled,  min = 1, step = 1}: NumericButtonProps) => {
 
     const iconDimensions = {
-        small: { width: 12, height: 3 },
-        large: { width: 16, height: 6 }
+        small: {sizeMean:12,  width: 12, height: 3 },
+        large: {sizeMean: 16, width: 16, height: 6 }
     };
 
-    const { width, height } = iconDimensions[size ? size : 'small'];
+    const { sizeMean, width, height } = iconDimensions[size ? size : 'small'];
 
     const handleValueChange = (value: number) => {
         if (!disabled){
@@ -48,9 +47,13 @@ const NumericInput = ({size = 'small', value, max, handleChange, disabled,  min 
 
     return (
         <div className={numericInputVariant({size})}>
-            <Subtract width={width} height={height} onClick={() => handleValueChange(value - step)}/>
-            {value}
-            <Plus width={width} height={height} onClick={() => handleValueChange(value + step)}/>
+            <div onClick={() => handleValueChange(value - step)}>
+                <Icon variant={'subtract'} color={'black'} width={width} height={height}/>
+            </div>
+                {value}
+            <div onClick={() => handleValueChange(value + step)}>
+                <Icon variant={'plus'} color={'black'} width={sizeMean} height={sizeMean}/>
+            </div>
         </div>
 
     )
