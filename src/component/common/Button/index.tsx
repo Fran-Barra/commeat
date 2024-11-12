@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes } from "react"
+import { ButtonHTMLAttributes, cloneElement, ReactElement } from "react"
 import {cva, VariantProps} from "class-variance-authority";
+import { IconProps } from "../Icon"
 
-
-const buttonVariant = cva([],{
+const buttonVariant = cva(['flex item-center', 'justify-center'],{
     variants: {
         variant:{
             fulfilled: [
@@ -28,12 +28,25 @@ const buttonVariant = cva([],{
 })
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariant>{
-
+    text: string
+    icon?: ReactElement<IconProps>
 }
 
-const Button = ({variant, size, ...props} : ButtonProps) => {
+const Button = ({text, variant, size, icon = undefined, ...props} : ButtonProps) => {
+    const cloneWithColor = () => {
+        if (!icon) return undefined
+        const iconColor : "white" | "primary" = variant == 'fulfilled' ? 'white' : 'primary'
+        return cloneElement(icon, {
+            color: iconColor,
+            ...icon.props,
+          })
+    }
+
     return (
-        <button className={buttonVariant({size, variant})} {...props} />
+        <button className={buttonVariant({size, variant})} {...props} >
+            {cloneWithColor()}
+            <p>{text}</p>
+        </button>
     )
 }
 
