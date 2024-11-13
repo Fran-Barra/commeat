@@ -10,7 +10,7 @@ import Controls from "../../../assets/Icon/Controls";
 import Book from "../../../assets/Icon/Book";
 import Calendar from "../../../assets/Icon/Calendar";
 import Home from "../../../assets/Icon/Home";
-import Person from "../../../assets/Icon/Person/person.tsx";
+import Person from "../../../assets/Icon/Person/index.tsx";
 
 export interface IconProps {
     variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'clock' | 'person' | 'arrow-back' | 'controls' | 'book' | 'calendar' | 'home';
@@ -44,9 +44,9 @@ const Icon = ({variant, color= 'icon', width, height, filled=false}: IconProps) 
         case 'clock':
             return <Clock color={colors[color]} width={width} height={height}/>
         case 'person':
-            return <Person color={colors[color]} width={width} height={height}/>
+            return <Person color={colors[color]} width={width} height={height} filled={filled} />
         case "search":
-            return <Search color={colors[color]} width={width} height={height} filled={filled}/>
+            return <Search color={colors[color]} width={width} height={height} />
         case "arrow-back":
             return <ArrowBack color={colors[color]} width={width} height={height}/>
         case "controls":
