@@ -1,4 +1,4 @@
-import {StoreItem} from "./interface.ts";
+import { StoreItem } from "../../../utils/types";
 import Icon from "../Icon";
 
 export interface StoreItemCardProps {

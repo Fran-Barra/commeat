@@ -7,7 +7,7 @@ const meta: Meta<typeof Icon> ={
     tags: ['autodocs'],
     argTypes:{
         variant:{
-            options:['shopping-cart', 'trash', 'three-dots'],
+            options:['shopping-cart', 'trash', 'three-dots', 'search', 'arrow-back'],
             control:{type:'select'},
         },
     }
