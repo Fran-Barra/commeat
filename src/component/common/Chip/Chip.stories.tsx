@@ -8,7 +8,7 @@ const meta: Meta<typeof Chip> ={
     argTypes: {
         variant: {
             control: { type: 'radio' },
-            options: ['fulfilled', 'stroked'],
+            options: ['filled', 'stroked'],
         },
         label: { control: 'text' },
     },
@@ -19,9 +19,9 @@ export default meta
 type Story = StoryObj<typeof Chip>
 
 export const Default: Story = {
-    name: 'Fulfilled',
+    name: 'Filled',
     args: {
-        variant: 'fulfilled',
+        variant: 'filled',
         label: 'Chip',
     },
     render: (args) => <Chip {...args} />
