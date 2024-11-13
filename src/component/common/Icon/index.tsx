@@ -11,9 +11,11 @@ import Book from "../../../assets/Icon/Book";
 import Calendar from "../../../assets/Icon/Calendar";
 import Home from "../../../assets/Icon/Home";
 import Person from "../../../assets/Icon/Person/index.tsx";
+import Bookmark from "../../../assets/Icon/Bookmark";
+import CalendarClock from "../../../assets/Icon/CalendarClock";
 
 export interface IconProps {
-    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'clock' | 'person' | 'arrow-back' | 'controls' | 'book' | 'calendar' | 'home';
+    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'clock' | 'person' | 'arrow-back' | 'controls' | 'book' | 'calendar' | 'home' | 'calendar-clock' | 'bookmark';
     color?: 'primary' | 'secondary' | 'icon' | 'black' | 'white'
     width?: number
     height?: number
@@ -57,6 +59,10 @@ const Icon = ({variant, color= 'icon', width, height, filled=false}: IconProps) 
             return <Calendar color={colors[color]} width={width} height={height} filled={filled} />
         case "home":
             return <Home color={colors[color]} width={width} height={height} filled={filled} />
+        case "bookmark":
+            return <Bookmark color={colors[color]} width={width} height={height} filled={filled} />
+        case "calendar-clock":
+            return <CalendarClock color={colors[color]} width={width} height={height} filled={filled} />
     }
 };
 
