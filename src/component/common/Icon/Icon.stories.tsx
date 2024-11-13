@@ -21,7 +21,7 @@ type Story = StoryObj<typeof Icon>
 export const Default: Story = {
     name:'Default',
     args: {
-        variant: 'shopping-cart',
+        variant: 'home',
         filled: false
     },
     render: (args) => <Icon {...args}/>
