@@ -7,6 +7,9 @@ const meta: Meta<typeof BottomSheet> = {
     component: BottomSheet,
     tags: ['autodocs'],
     argTypes: {
+        open: {
+            control: 'boolean',
+        },
         title: {
             control: 'text',
         },
@@ -23,19 +26,25 @@ type Story = StoryObj<typeof BottomSheet>
 export const Default: Story = {
     name: 'Default',
     args: {
+        open: true,
         title: 'Title',
         buttonText: 'Button',
     },
-    render: (args) => <BottomSheet {...args}/>
+    render: (args) => (
+        <div className={"bg-white h-[800px]"}>
+            <BottomSheet {...args}/>
+        </div>
+    )
 }
 
 export const WithChildren: Story = {
     name: 'With Children',
     args: {
+        open: true,
         title: 'Title',
         buttonText: 'Button',
         children:
-            <div className="w-[200px] flex flex-col gap-4">
+            <div className="flex flex-col gap-4">
                 {[...Array(7)].map((_, index) => (
                     <div key={index} >
                         <Logo variant="light"/>
@@ -43,15 +52,9 @@ export const WithChildren: Story = {
                 ))}
             </div>
     },
-    render: (args) => <BottomSheet {...args}/>
-}
-
-export const WithCancelButton: Story = {
-    name: 'With Cancel Button',
-    args: {
-        title: 'Title',
-        buttonText: 'Button',
-        showCancelButton: true,
-    },
-    render: (args) => <BottomSheet {...args}/>
+    render: (args) => (
+        <div className={"bg-white h-[800px]"}>
+            <BottomSheet {...args}/>
+        </div>
+    )
 }

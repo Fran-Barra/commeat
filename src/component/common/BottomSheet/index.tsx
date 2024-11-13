@@ -2,40 +2,33 @@ import Button from "../Button";
 import React from "react";
 
 export interface BottomSheetProps extends React.HTMLAttributes<HTMLDivElement> {
+    open: boolean;
+    onClose: () => void;
     title: string;
     buttonText: string;
-    showCancelButton?: boolean;
 }
 
-const BottomSheet = ({title, buttonText, children, showCancelButton}: BottomSheetProps) => {
+const BottomSheet = ({ open, onClose, title, buttonText, children }: BottomSheetProps) => {
+
+    if (!open) return null;
+
     return (
-        <div className={'w-[430px] h-[838px] bg-black/50 rounded-t-3xl flex flex-col justify-end'}>
-            <div className='w-[430px] bg-white rounded-t-3xl border'>
-                <div className='justify-items-center mt-2 border-b-[0.75px] border-gray-300'>
-                    <div className='w-[44px] h-[4px] bg-gray-300 rounded'></div>
-                    <p className={'mt-6 text-h6 mb-[13px]'}>{title}</p>
+        <div className="fixed inset-0 z-10 flex items-end">
+            <div className="absolute inset-0 bg-black bg-opacity-50" onClick={onClose} />
+            <div className="w-full bg-white rounded-t-3xl  border-gray-300 z-20 animate-slide-up">
+                <div className={"border-b-[1px] border-b-gray-500 flex flex-col items-center pt-2 pb-3"} onClick={onClose}>
+                    <div className="w-[44px] h-[4px] bg-gray-300 rounded" />
+                    <p className="mt-6 text-center text-h6 mb-[13px]">{title}</p>
                 </div>
-                <div className='h-[410px] overflow-y-scroll'>
+                <div className="h-[566px] overflow-y-scroll px-4">
                     {children}
                 </div>
-                {showCancelButton ?
-                    (
-                        <div className='bg-white border-t-[0.75px] border-gray-300 p-4 flex flex-row justify-between items-center'>
-                            <div className='text-h6'>Cancelar</div>
-                            <div className={'w-[109px]'}>
-                                <Button text={buttonText}/>
-                            </div>
-                        </div>
-                    ) :
-                    (
-                        <div className='bg-white border-t-[0.75px] border-gray-300 p-4'>
-                            <Button text={buttonText}/>
-                        </div>
-                    )
-                }
+                <div className="bg-white border-t-[1px] border-gray-500 flex justify-between items-center p-4">
+                    <Button text={buttonText} onClick={onClose} />
+                </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default BottomSheet;

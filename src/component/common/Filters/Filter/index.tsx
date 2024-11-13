@@ -30,7 +30,7 @@ const filterVariant = cva([
 const Filter = ({ name, selected, onClick }: FilterProps) => {
     return (
         <div className={filterVariant({ selected })} onClick={onClick}>
-            {name}
+            <p className={"text-p2"}>{name}</p>
         </div>
     );
 };
