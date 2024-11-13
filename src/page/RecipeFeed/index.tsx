@@ -54,7 +54,7 @@ const RecipeFeed = ({recipes, filters}: RecipeFeedProps) => {
                         <div onClick={() => navigate('/recipe')}><RecipeCard {...recipe}/></div>))}
                 </div>
             </div>
-            <div className={'bottom-0 flex w-full'}>
+            <div className={'fixed bottom-0 flex w-full'}>
                 <NavBar selected={'book'}/>
             </div>
         </div>

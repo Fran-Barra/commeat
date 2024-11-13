@@ -63,14 +63,14 @@ const RecipePage = () => {
             <Header leftIcon={true} title={"Recipe"}/>
             <img className="w-full h-auto object-cover max-h-60" src={recipe.img}/>
             <RecipeInfo recipe={recipe}/>
-            <div className="fixed bottom-40 w-full z-10">
+            <div className="fixed bottom-14 w-full z-10">
                 <BottomSheetShort
                     rightText={`$${recipe.ingredients.reduce((total, ing) => total + ing.price * ing.amount, 0)}`}
                     buttonText={"Comprar"}
                     leftText={"A Pagar"}
                 />
             </div>
-            <div className={'fixed bottom-24 flex w-full'}>
+            <div className={'fixed bottom-0 flex w-full'}>
                 <NavBar selected={'book'}/>
             </div>
         </div>
