@@ -37,7 +37,7 @@ const Filters = ({ filters, handleFilter }: FiltersProps) => {
     return (
         <div className={mainContainer()}>
             <div className={filterButton()}>
-                <Icon variant={'controls'}/>
+                <Icon variant={'controls'} color={"primary"}/>
                 <h6>Filtrar</h6>
             </div>
             <div className={filtersContainer()}>

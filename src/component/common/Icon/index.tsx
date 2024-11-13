@@ -1,25 +1,46 @@
-import Cart from '../../../assets/Icon/cart.svg';
-import Trash from '../../../assets/Icon/trash.svg';
-import ThreeDots from '../../../assets/Icon/three-dots.svg';
-import PlusWhite from '../../../assets/Icon/plus-white.svg';
-import Controls from '../../../assets/Icon/controls.svg';
+import Plus from "../../../assets/Icon/Plus";
+import Cart from "../../../assets/Icon/Cart";
+import Trash from "../../../assets/Icon/Trash";
+import ThreeDots from "../../../assets/Icon/ThreeDots";
+import Subtract from "../../../assets/Icon/Subtract";
+import Search from "../../../assets/Icon/Search";
+import ArrowBack from "../../../assets/Icon/ArrowBack";
+import Controls from "../../../assets/Icon/Controls";
 
 export interface IconProps {
-    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus-white' | 'controls';
+    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'arrow-back' | 'controls';
+    color?: 'primary' | 'secondary' | 'icon' | 'black' | 'white'
+    width?: number
+    height?: number
 }
 
-const Icon = ({variant}: IconProps) => {
+const Icon = ({variant, color= 'icon', width, height}: IconProps) => {
+
+    const colors = {
+        primary: 'fill-primary-500',
+        secondary: 'fill-secondary-500',
+        icon: 'fill-gray-600',
+        white: 'fill-white',
+        black: 'fill-black'
+    }
+
     switch (variant) {
         case 'shopping-cart':
-            return <img src={Cart} alt="Cart" />;
+            return <Cart color={colors[color]} width={width} height={height}/>
         case 'trash':
-            return <img src={Trash} alt="Trash"/>;
+            return <Trash color={colors[color]} width={width} height={height}/>
         case 'three-dots':
-            return <img src={ThreeDots} alt="ThreeDots" />;
-        case 'plus-white':
-            return <img src={PlusWhite} alt={'PlusWhite'}/>;
-        case 'controls':
-            return <img src={Controls} alt={'Controls'}/>;
+            return <ThreeDots color={colors[color]} width={width} height={height}/>
+        case 'plus':
+            return <Plus color={colors[color]} width={width} height={height}/>
+        case 'subtract':
+            return <Subtract color={colors[color]} width={width} height={height}/>
+        case "search":
+            return <Search color={colors[color]} width={width} height={height}/>
+        case "arrow-back":
+            return <ArrowBack color={colors[color]} width={width} height={height}/>
+        case "controls":
+            return <Controls color={colors[color]} width={width} height={height}/>
     }
 };
 
