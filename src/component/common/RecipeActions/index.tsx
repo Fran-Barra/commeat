@@ -41,7 +41,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ iconVariant, text, size, filled, is
             onClick={onClick}
             className={`flex items-center justify-between w-full h-[44px] cursor-pointer ${!isFirst ? 'border-t border-solid border-gray-400' : ''} ${rightPadding} pl-4`}
         >
-            <span className="flex-1 overflow-hidden text-ellipsis text-black font-poppins text-[16px] font-normal leading-normal whitespace-nowrap">
+            <span className="flex-1 overflow-hidden text-ellipsis text-black font-poppins text-p1 font-normal leading-normal whitespace-nowrap">
                 {text}
             </span>
             <Icon variant={iconVariant as any} color="black" width={size} height={size} filled={filled} />
