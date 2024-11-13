@@ -58,6 +58,10 @@ export default {
         bold: '700',
         extralight: '200'
       }
+
+    },
+    boxShadow: {
+      'custom-nav': '0px -2px 4px 0px rgba(0, 0, 0, 0.05)',
     },
   },
   plugins: [],

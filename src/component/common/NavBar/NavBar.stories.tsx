@@ -6,7 +6,6 @@ const meta: Meta<typeof NavBar> = {
     component: NavBar,
     tags: ['autodocs'],
     argTypes: {
-        icons: { control: [] },
     },
 };
 
@@ -16,7 +15,6 @@ type Story = StoryObj<typeof NavBar>;
 export const Default: Story = {
     name: "Default",
     args: {
-        icons: ['home', 'search', 'shopping-cart', 'user']
     },
-    render: (args) => <Header {...args} />,
+    render: (args) => <NavBar {...args} />,
 };
