@@ -1,29 +1,32 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'; // Importar estilos básicos
 
 const MyCalendar = () => {
     const [date, setDate] = useState<Date>(new Date());
 
     return (
-        <div className="border-0">
+        <div className="border-0 bg-gray-100 flex flex-col justify-items-center ">
+            <span className="text-blue-500 font-light text-md bg-gray-100 w-full p-3 flex justify-center items-center">
+                {date.toLocaleDateString('en-US', {month: 'short', year: 'numeric'})}
+            </span>
+
             <Calendar
                 onChange={(value) => setDate(value as Date)}
                 value={date}
                 calendarType="gregory"
                 locale="en-US"
                 formatShortWeekday={(_locale, date) =>
-                    date.toLocaleDateString('en-US', { weekday: 'narrow' })
+                    date.toLocaleDateString('en-US', {weekday: 'narrow'})
                 }
                 formatMonth={(_locale, date) =>
-                    date.toLocaleDateString('en-US', { month: 'short' })
+                    date.toLocaleDateString('en-US', {month: 'short'})
                 }
                 prevLabel={null}
                 nextLabel={null}
                 prev2Label={null}
                 next2Label={null}
-                className="w-full text-center custom-calendar border-0 "
-                tileClassName={({ date: tileDate }) => {
+                className="w-full text-center custom-calendar border-0 bg-gray-100 flex"
+                tileClassName={({date: tileDate}) => {
                     const isSelected = tileDate.toDateString() === date.toDateString();
                     const isToday = tileDate.toDateString() === new Date().toDateString();
                     const day = tileDate.getDay();
@@ -32,21 +35,23 @@ const MyCalendar = () => {
 
                     return `h-12 w-12 flex items-center justify-center rounded-full ${
                         isDisabled
-                            ? 'text-white bg-blue' 
+                            ? 'text-gray-100 bg-blue bg-gray-100'
                             : isSelected
-                                ? 'bg-primary-500 text-white' 
+                                ? 'bg-primary-500 text-white'
                                 : isToday
-                                    ? 'text-primary-500 bg-white font-bold'
+                                    ? 'text-primary-500 bg-gray-100 font-bold'
                                     : isWeekend
-                                        ? 'text-gray-500'
-                                        : 'hover:bg-primary-100'
+                                        ? 'text-gray-500 bg-gray-100'
+                                        : 'hover:bg-primary-100 bg-gray-100'
                     }`;
                 }}
-                navigationLabel={({ date }) => (
-                    <span className="text-blue-500 font-light text-sm">
-                        {date.toLocaleDateString('en-US', { month: 'short' })}
+                navigationLabel={({date}) => (
+                    <span className="text-blue-500 font-light text-sm bg-gray-100">
+                        {date.toLocaleDateString('en-US', {month: 'short'})}
                     </span>
                 )}
+                showNavigation={false}
+
             />
         </div>
     );
