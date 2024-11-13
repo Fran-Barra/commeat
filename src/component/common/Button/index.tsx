@@ -17,9 +17,9 @@ const buttonVariant = cva(['flex item-center', 'justify-center'],{
             ]
         },
         size: {
-            small:['h-10 w-full px-4 py-2 text-p3'],
-            medium:['h-11 w-full px-4 py-3 text-p2'],
-            large: ['h-12 w-full px-4 py-3 text-h6']
+            small:['h-10 w-full px-4 py-2 text-p3 gap-[8px]'],
+            medium:['h-11 w-full px-4 py-3 text-p2 gap-[8px]'],
+            large: ['h-12 w-full px-4 py-3 text-h6 gap-[8px]']
         }
     },
     defaultVariants: {

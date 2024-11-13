@@ -10,10 +10,6 @@ const meta: Meta<typeof SearchBar> = {
             control: { type: 'text' },
             defaultValue: 'Search...',
         },
-        width: {
-            control: { type: 'number' },
-            defaultValue: 249,
-        },
         icon: {
             options: ['search'],
             control: { type: 'radio' },
@@ -36,7 +32,6 @@ export const Default: Story = {
     name: 'Default',
     args: {
         placeholder: 'Search...',
-        width: 249,
         icon: 'search',
         iconPosition: 'left',
     },
@@ -48,7 +43,6 @@ export const IconOnRight: Story = {
     name: 'IconOnRight',
     args: {
         placeholder: 'Search...',
-        width: 249,
         icon: 'search',
         iconPosition: 'right',
     },
