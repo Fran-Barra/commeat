@@ -2,9 +2,10 @@ import Cart from '../../../assets/Icon/cart.svg';
 import Trash from '../../../assets/Icon/trash.svg';
 import ThreeDots from '../../../assets/Icon/three-dots.svg';
 import PlusWhite from '../../../assets/Icon/plus-white.svg';
+import Controls from '../../../assets/Icon/controls.svg';
 
 export interface IconProps {
-    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus-white';
+    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus-white' | 'controls';
 }
 
 const Icon = ({variant}: IconProps) => {
@@ -16,7 +17,9 @@ const Icon = ({variant}: IconProps) => {
         case 'three-dots':
             return <img src={ThreeDots} alt="ThreeDots" />;
         case 'plus-white':
-            return <img src={PlusWhite} alt={'PlusWhite'}/>
+            return <img src={PlusWhite} alt={'PlusWhite'}/>;
+        case 'controls':
+            return <img src={Controls} alt={'Controls'}/>;
     }
 };
 
