@@ -10,7 +10,7 @@ const NavBar = ({ selected = 'home' }: NavBarProps) => {
     const icons: IconProps['variant'][] = ['home', 'book', 'calendar', 'person'];
 
     return (
-        <div className="flex w-full p-[10px_46px_10px_46px] shadow-custom-nav justify-between items-center gap-[57px] flex-shrink-0 bg-white">
+        <div className="flex w-full px-[24px] py-[8px] shadow-custom-nav justify-between items-center gap-[57px] flex-shrink-0 bg-white">
             {icons.map((icon, index) => (
                 <div key={index} onClick={() => setSelectedIcon(icon)}>
                     <Icon

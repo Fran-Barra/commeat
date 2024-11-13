@@ -39,7 +39,7 @@ const RecipeCard = ({recipeName, recipeTimeInMin, recipeImg, recipePortions, rec
                 <div className={titleContainer}>
                     <p className={titleText}>{recipeName}</p>
                     <div className={'relative'}>
-                        <div onClick={handleOptionsClick}>
+                        <div onClick={handleOptionsClick} style={{display:'flex', zIndex:2000}}>
                             <Icon color={'black'} variant={'three-dots'}/>
                         </div>
                         {recipeActionsOpen && <div className={'right-0 absolute'}><RecipeActions/></div>}
