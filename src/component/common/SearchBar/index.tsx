@@ -3,14 +3,12 @@ import Icon, { IconProps } from "../Icon";
 
 interface SearchBarProps {
     placeholder: string;
-    width?: number;
     icon?: IconProps['variant'];
     iconPosition?: 'left' | 'right';
 }
 
 const SearchBar = ({
                        placeholder,
-                       width = 249,
                        icon,
                        iconPosition = 'left',
                    }: SearchBarProps) => {
@@ -24,7 +22,7 @@ const SearchBar = ({
     const iconColor = hasContent ? "black" : "icon";
 
     return (
-        <div className="inline-flex flex-col items-start" style={{ width: `${width}px` }}>
+        <div className="inline-flex flex-col items-start w-full">
             <div className={`flex items-center p-3.5 gap-2 w-full rounded-lg border bg-white ${
                 (isFocused || hasContent)
                     ? 'border-black text-black'
