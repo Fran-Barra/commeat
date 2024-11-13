@@ -18,7 +18,7 @@ const xButtonStyle = cva([
 
 const AddItemCard = ({item, amount, handleAmountChanged, handleCancel} : AddItemCardProps) => {
     return (
-        <div className="relative flex flex-raw justify-between shadow rounded-xl max-w-96 min-h-32">
+        <div className="relative flex flex-raw justify-between shadow rounded-xl max-w-96 min-h-32 shadow-add-item-card">
             <button className={xButtonStyle()} onClick={handleCancel}>
                 X
             </button>

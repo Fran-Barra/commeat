@@ -18,6 +18,8 @@ const mainContainer = cva([
     'flex-row',
     'items-center',
     'gap-3',
+    'overflow-x-scroll',
+    'hide-scrollbar',
 ]);
 
 const filterButton = cva([

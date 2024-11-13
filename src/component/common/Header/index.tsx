@@ -11,7 +11,7 @@ const Header = ({ leftIcon, title, logo }: HeaderProps) => {
     const shouldShowLogo = logo && !title;
 
     return (
-        <div className="flex w-[430px] p-[16px_10px_10px_10px] justify-between items-center gap-[10px] flex-shrink-0 bg-primary-500 text-white">
+        <div className="flex w-full p-[16px_10px_10px_10px] justify-between items-center gap-[10px] flex-shrink-0 bg-primary-500 text-white">
             {leftIcon && (
                 <div className="flex-shrink-0">
                     <Icon width={32} height={32} variant={"arrow-back"} color={"white"} />

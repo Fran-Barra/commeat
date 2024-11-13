@@ -60,7 +60,9 @@ export default {
       },
     boxShadow: {
       'custom-nav': '0px -2px 4px 0px rgba(0, 0, 0, 0.05)',
-      'recipe-actions': '0px 0px 32px 0px rgba(0, 0, 0, 0.20)'
+      'recipe-actions': '0px 0px 32px 0px rgba(0, 0, 0, 0.20)',
+        'recipe-card': '0px 0px 8px 0px rgba(0, 0, 0, 0.25);',
+        'add-item-card':'0px 0.5px 4px 0px rgba(0, 0, 0, 0.15);'
       },
       keyframes: {
         'slide-up': {

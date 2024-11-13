@@ -1,14 +1,37 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { ToastContainer} from 'react-toastify';
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import App from './App.tsx';
+import './index.css';
+import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Logo from "./component/common/Logo";
+import RecipeFeed from "./page/RecipeFeed";
+
+// Define two simple components
+const Home = () => (
+    <div>
+        <h1>Home Page</h1>
+        <Link to="/about">Go to About</Link>
+    </div>
+);
+
+const About = () => (
+    <div>
+        <h1>About Page</h1>
+        <Link to="/">Go to Home</Link>
+    </div>
+);
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-    <ToastContainer icon={<Logo variant={'light'}/>}/>
-  </StrictMode>,
-)
+    <StrictMode>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<App/>}/>
+                <Route path="/about" element={<About/>}/>
+            </Routes>
+
+            <ToastContainer icon={<Logo variant={'light'}/>}/>
+        </BrowserRouter>
+    </StrictMode>,
+);
