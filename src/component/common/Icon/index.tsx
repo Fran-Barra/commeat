@@ -7,9 +7,10 @@ import Search from "../../../assets/Icon/Search";
 import ArrowBack from "../../../assets/Icon/ArrowBack";
 import Clock from "../../../assets/Icon/Clock";
 import Person from "../../../assets/Icon/Person";
+import Controls from "../../../assets/Icon/Controls";
 
 export interface IconProps {
-    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'clock' | 'person' | 'arrow-back';
+    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'clock' | 'person' | 'arrow-back' | 'controls';
     color?: 'primary' | 'secondary' | 'icon' | 'black' | 'white'
     width?: number
     height?: number
@@ -44,6 +45,8 @@ const Icon = ({variant, color= 'icon', width, height}: IconProps) => {
             return <Search color={colors[color]} width={width} height={height}/>
         case "arrow-back":
             return <ArrowBack color={colors[color]} width={width} height={height}/>
+        case "controls":
+            return <Controls color={colors[color]} width={width} height={height}/>
     }
 };
 
