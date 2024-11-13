@@ -9,7 +9,6 @@ const Search = ({width = 24, height = 24, color}: IconProps) => {
                   />
         </svg>
 
-
     )
 }
 export default Search;

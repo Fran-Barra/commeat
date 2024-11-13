@@ -7,8 +7,9 @@ const meta: Meta<typeof Icon> ={
     tags: ['autodocs'],
     argTypes:{
         variant:{
-            options:['shopping-cart', 'trash', 'three-dots', 'search', 'arrow-back'],
+            options:['shopping-cart', 'trash', 'three-dots', 'plus', 'subtract', 'search', 'arrow-back', 'book', 'calendar', 'home', 'profile'],
             control:{type:'select'},
+            filled: {control: 'boolean'}
         },
     }
 }
@@ -21,6 +22,7 @@ export const Default: Story = {
     name:'Default',
     args: {
         variant: 'shopping-cart',
+        filled: false
     },
     render: (args) => <Icon {...args}/>
 }
