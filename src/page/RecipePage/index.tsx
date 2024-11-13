@@ -58,15 +58,15 @@ const RecipePage = () => {
     // }
 
     return (
-        <div>
+        <div style={{width:'400px'}}>
             <Header leftIcon={true} title={"Recipe"} />
             <img className="w-full h-auto object-cover max-h-60" src={recipe.img}/>
             <RecipeInfo recipe={recipe}/>
             <div className="fixed bottom-0 w-full z-10">
                 <BottomSheetShort
-                    buttonText={"comprar"}
-                    rightText={"A pagar"}
-                    leftText={`$${recipe.ingredients.reduce((total, ing) => total + ing.price * ing.amount, 0)}`}
+                    rightText={`$${recipe.ingredients.reduce((total, ing) => total + ing.price * ing.amount, 0)}`}
+                    buttonText={"Comprar"}
+                    leftText={"A Pagar"}
                 />
             </div>
         </div>
@@ -82,8 +82,8 @@ const RecipeInfo = ({recipe} : {recipe : Recipe}) => {
     }
 
     return (
-        <div className="bg-gray-200">
-            <div className="flex flex-row justify-between">
+        <div className="bg-gray-200 gap-[24px] flex flex-col">
+            <div className="flex flex-row justify-between mt-4">
                 <p className="text-h5 ps-4">{recipe.name}</p>
                 <div className="relative">
                     <div className="mr-2 mt-2" onClick={tugleAction}>

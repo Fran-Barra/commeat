@@ -6,7 +6,7 @@ import './index.css';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Logo from "./component/common/Logo";
-import RecipeFeed from "./page/RecipeFeed";
+import RecipePage from "./page/RecipePage";
 
 // Define two simple components
 const Home = () => (
@@ -28,7 +28,7 @@ createRoot(document.getElementById('root')!).render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App/>}/>
-                <Route path="/about" element={<About/>}/>
+                <Route path="/recipe" element={<RecipePage/>}/>
             </Routes>
 
             <ToastContainer icon={<Logo variant={'light'}/>}/>

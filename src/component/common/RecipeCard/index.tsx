@@ -2,6 +2,7 @@ import Icon from "../Icon";
 import Chip from "../Chip";
 import RecipeActions from "../RecipeActions";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export interface RecipeCardProps {
     recipeName: string;
@@ -27,6 +28,7 @@ const chipsContainer = 'flex flex-row gap-2 overflow-x-auto'
 const RecipeCard = ({recipeName, recipeTimeInMin, recipeImg, recipePortions, recipeChips, optionsOnClick}: RecipeCardProps) => {
 
     const [recipeActionsOpen, setRecipeActionsOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleOptionsClick = () => {
         setRecipeActionsOpen(!recipeActionsOpen);
@@ -34,7 +36,7 @@ const RecipeCard = ({recipeName, recipeTimeInMin, recipeImg, recipePortions, rec
 
 
     return (
-        <div className={containerClass}>
+        <div className={containerClass} onClick={() => navigate('/recipe')}>
             <img src={recipeImg} alt={'Recipe Photo'} className={imageClass}/>
             <div className={contentContainer}>
                 <div className={titleContainer}>

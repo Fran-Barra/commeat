@@ -1,13 +1,9 @@
 import './App.css'
-import StoreItemCard from "./component/common/StoreItemCard";
-import Flour from "./assets/Sample/flour.png";
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RecipeFeed from "./page/RecipeFeed";
 
 
 function App() {
-  const notify = () => toast("Ingredientes agregados al carrito");
 
   return (
       <div style={{width: '400px', height: '100%'}}>
