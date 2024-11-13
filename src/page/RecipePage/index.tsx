@@ -1,12 +1,16 @@
 import { useState } from "react";
-import Empanada from "../../../src/assets/Sample/empanadas.png"
-import Flour from "../../../src/assets/Sample/flour.png"
 import Header from "../../component/common/Header";
 import Icon from "../../component/common/Icon";
 import RecipeActions from "../../component/common/RecipeActions";
 import StoreItemCard from "../../component/common/StoreItemCard";
 import { Recipe } from "../../utils/types";
 import BottomSheetShort from "../../component/common/BottomSheetShort";
+
+import Empanada from "../../../src/assets/Sample/empanadas.png"
+import Flour from "../../../src/assets/Sample/flour.png"
+import Leche from "../../../src/assets/Sample/Leche.png"
+import Limon from "../../../src/assets/Sample/Limon.png"
+import Cebolla from "../../../src/assets/Sample/Cebolla.png"
 
 
 const recipe = {
@@ -21,21 +25,21 @@ const recipe = {
             amount: 1
         },
         {
-            name: 'Harina',
+            name: 'Limon',
             price: 1000,
-            img: Flour,
+            img: Limon,
+            amount: 2
+        },
+        {
+            name: 'Leche',
+            price: 1000,
+            img: Leche,
             amount: 1
         },
         {
-            name: 'Harina',
+            name: 'Cebolla',
             price: 1000,
-            img: Flour,
-            amount: 1
-        },
-        {
-            name: 'Harina',
-            price: 1000,
-            img: Flour,
+            img: Cebolla,
             amount: 1
         },
     ],
