@@ -23,7 +23,7 @@ const SearchBar = ({
 
     return (
         <div className="inline-flex flex-col items-start w-full">
-            <div className={`flex items-center p-3.5 gap-2 w-full rounded-lg border bg-white ${
+            <div className={`flex items-center p-3.5 gap-2 w-full rounded-lg border bg-transparent ${
                 (isFocused || hasContent)
                     ? 'border-black text-black'
                     : 'border-gray-400 text-gray-500'
@@ -39,7 +39,7 @@ const SearchBar = ({
                 <input
                     type="text"
                     placeholder={placeholder}
-                    className="flex-1 outline-none bg-white placeholder:text-gray-300 placeholder:text-p1 placeholder:font-normal"
+                    className="flex-1 bg-transparent outline-none placeholder:text-gray-300 placeholder:text-p1 placeholder:font-normal"
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     onChange={handleInputChange}
