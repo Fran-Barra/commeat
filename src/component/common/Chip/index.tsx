@@ -13,7 +13,7 @@ const Chip = ({ variant, label }: ChipProps) => {
     const chipClass = chipVariantClasses[variant];
 
     return (
-        <div className={`${chipBaseClass} ${chipClass} text-p1 font-regular`}>
+        <div className={`${chipBaseClass} ${chipClass} text-p3 font-regular`}>
             {label}
         </div>
     );

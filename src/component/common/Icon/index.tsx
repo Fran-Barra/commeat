@@ -4,9 +4,11 @@ import Trash from "../../../assets/Icon/Trash";
 import ThreeDots from "../../../assets/Icon/ThreeDots";
 import Subtract from "../../../assets/Icon/Subtract";
 import Search from "../../../assets/Icon/Search";
+import Clock from "../../../assets/Icon/Clock";
+import Person from "../../../assets/Icon/Person";
 
 export interface IconProps {
-    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search';
+    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'clock' | 'person';
     color?: 'primary' | 'secondary' | 'icon' | 'black' | 'white'
     width?: number
     height?: number
@@ -33,6 +35,10 @@ const Icon = ({variant, color= 'icon', width, height}: IconProps) => {
             return <Plus color={colors[color]} width={width} height={height}/>
         case 'subtract':
             return <Subtract color={colors[color]} width={width} height={height}/>
+        case 'clock':
+            return <Clock color={colors[color]} width={width} height={height}/>
+        case 'person':
+            return <Person color={colors[color]} width={width} height={height}/>
         case "search":
             return <Search color={colors[color]} width={width} height={height}/>
     }
