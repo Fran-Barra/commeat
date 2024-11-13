@@ -58,7 +58,7 @@ const RecipePage = () => {
     // }
 
     return (
-        <div style={{width:'400px'}}>
+        <div style={{width:'100%', height:'100%'}}>
             <Header leftIcon={true} title={"Recipe"} />
             <img className="w-full h-auto object-cover max-h-60" src={recipe.img}/>
             <RecipeInfo recipe={recipe}/>

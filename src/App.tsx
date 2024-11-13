@@ -6,7 +6,7 @@ import RecipeFeed from "./page/RecipeFeed";
 function App() {
 
   return (
-      <div style={{width: '400px', height: '100%'}}>
+      <div style={{width: '100%', height: '100%'}}>
           <RecipeFeed recipes={[{recipeName: 'Empanadas de carne',
               recipeTimeInMin: 60,
               recipeImg: 'https://assets.elgourmet.com/wp-content/uploads/2023/10/EMPANADAS-1-1024x683.jpg.webp',
