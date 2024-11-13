@@ -13,7 +13,7 @@ const BottomSheetShort = ({rightText, buttonText, leftText}: BottomSheetShortPro
     const [value, setValue] = useState(2)
 
     return (
-        <div className='w-[430px] bg-white border rounded-t-lg'>
+        <div className='bg-white border rounded-t-lg'>
             <div className='flex flex-row justify-between mt-4 mb-[18px] px-8'>
                 {leftText ? (<p className={'text-h5'}>{leftText}</p>) : <NumericInput value={value} max={1000} handleChange={setValue} />}
                 <p className={'text-h5'}>{rightText}</p>
