@@ -87,3 +87,13 @@ button:focus-visible {
 .Toastify__progress-bar-theme--light{
     background: #EFA92E; ;
 }
+
+/* Hide horizontal scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
