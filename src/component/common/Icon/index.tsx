@@ -4,9 +4,10 @@ import Trash from "../../../assets/Icon/Trash";
 import ThreeDots from "../../../assets/Icon/ThreeDots";
 import Subtract from "../../../assets/Icon/Subtract";
 import Search from "../../../assets/Icon/Search";
+import ArrowBack from "../../../assets/Icon/ArrowBack";
 
 export interface IconProps {
-    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search';
+    variant: 'shopping-cart' | 'trash' | 'three-dots' | 'plus' | 'subtract' | 'search' | 'arrow-back';
     color?: 'primary' | 'secondary' | 'icon' | 'black' | 'white'
     width?: number
     height?: number
@@ -35,6 +36,8 @@ const Icon = ({variant, color= 'icon', width, height}: IconProps) => {
             return <Subtract color={colors[color]} width={width} height={height}/>
         case "search":
             return <Search color={colors[color]} width={width} height={height}/>
+        case "arrow-back":
+            return <ArrowBack color={colors[color]} width={width} height={height}/>
     }
 };
 

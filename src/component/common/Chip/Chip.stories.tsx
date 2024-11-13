@@ -4,6 +4,7 @@ import Chip from "./index.tsx";
 const meta: Meta<typeof Chip> ={
     title: 'Chip',
     component: Chip,
+    tags: ['autodocs'],
     argTypes: {
         variant: {
             control: { type: 'radio' },
