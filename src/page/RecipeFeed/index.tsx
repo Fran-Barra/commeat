@@ -4,6 +4,7 @@ import SearchBar from "../../component/common/SearchBar";
 import Icon from "../../component/common/Icon";
 import Filters from "../../component/common/Filters";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 interface RecipeFeedProps {
     recipes: RecipeCardProps[];
@@ -17,6 +18,10 @@ interface RecipeFeedProps {
 
 const RecipeFeed = ({recipes, filters}: RecipeFeedProps) => {
     const [shownFilters, setShownFilters] = useState(filters);
+
+    const navigate = useNavigate();
+
+
 
     const handleFilter = (index: number) => {
         const newFilters = shownFilters.map((filter, i) => {
@@ -43,7 +48,7 @@ const RecipeFeed = ({recipes, filters}: RecipeFeedProps) => {
                     <Filters filters={shownFilters} handleFilter={handleFilter}/>
                 </div>
                 <div className={'flex w-full flex-col gap-[24px]'}>
-                    {recipes.map((recipe) => (<RecipeCard {...recipe}/>))}
+                    {recipes.map((recipe) => (<div onClick={() => navigate('/recipe')}><RecipeCard {...recipe}/></div>))}
                 </div>
             </div>
         </div>
