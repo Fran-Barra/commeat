@@ -4,6 +4,7 @@ import TextInput from "./index.tsx";
 const meta: Meta<typeof TextInput> = {
     title: "TextInput",
     component: TextInput,
+    tags: ['autodocs'],
     argTypes: {
         label: { control: "text" },
         placeholder: { control: "text" },

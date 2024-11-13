@@ -1,11 +1,11 @@
 export interface ChipProps {
-    variant: 'fulfilled' | 'stroked';
+    variant: 'filled' | 'stroked';
     label: string;
 }
 
 const chipBaseClass = 'inline-flex px-2 py-1 justify-center items-center gap-[10px] rounded-full';
 const chipVariantClasses = {
-    fulfilled: 'bg-primary-500 text-white',
+    filled: 'bg-primary-500 text-white',
     stroked: 'border border-primary-500 text-primary-500',
 };
 

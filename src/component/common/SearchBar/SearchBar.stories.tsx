@@ -15,7 +15,7 @@ const meta: Meta<typeof SearchBar> = {
             defaultValue: 249,
         },
         icon: {
-            options: ['search', 'shopping-cart'],
+            options: ['search'],
             control: { type: 'radio' },
             defaultValue: 'search',
         },
@@ -37,7 +37,7 @@ export const Default: Story = {
     args: {
         placeholder: 'Search...',
         width: 249,
-        icon: 'shopping-cart',
+        icon: 'search',
         iconPosition: 'left',
     },
     render: (args) => <SearchBar {...args} />,
@@ -49,7 +49,7 @@ export const IconOnRight: Story = {
     args: {
         placeholder: 'Search...',
         width: 249,
-        icon: 'shopping-cart',
+        icon: 'search',
         iconPosition: 'right',
     },
     render: (args) => <SearchBar {...args} />,

@@ -1,5 +1,5 @@
-export interface IconProps {
-    height?: number;
-    width?: number;
-    color?: string;
+export interface StoreItem {
+    name: string;
+    price: number;
+    img: string;
 }
