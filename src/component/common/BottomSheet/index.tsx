@@ -20,7 +20,7 @@ const BottomSheet = ({ open, onClose, title, buttonText, children }: BottomSheet
                     <div className="w-[44px] h-[4px] bg-gray-300 rounded" />
                     <p className="mt-6 text-center text-h6 mb-[13px]">{title}</p>
                 </div>
-                <div className="h-[566px] overflow-y-scroll px-4">
+                <div className="h-[50%] overflow-y-scroll px-4">
                     {children}
                 </div>
                 <div className="bg-white border-t-[1px] border-gray-500 flex justify-between items-center p-4">

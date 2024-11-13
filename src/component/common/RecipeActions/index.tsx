@@ -9,7 +9,7 @@ const MenuComponent = () => {
     };
 
     return (
-        <div className="flex flex-col items-start w-[250px] rounded-[12px] shadow-recipe-actions">
+        <div className="flex flex-col items-start w-[250px] rounded-[12px] shadow-recipe-actions bg-white">
             <MenuItem
                 iconVariant="bookmark"
                 text="Agregar a favoritos"

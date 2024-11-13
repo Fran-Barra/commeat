@@ -27,19 +27,19 @@ const SearchBar = ({
                 (isFocused || hasContent)
                     ? 'border-black text-black'
                     : 'border-gray-400 text-gray-500'
-            } font-normal leading-normal outline-none mt-2`}>
+            } font-normal leading-normal outline-none`}>
 
                 {/* Renderizar el ícono condicionalmente a la izquierda */}
                 {icon && iconPosition === 'left' && (
                     <div className="flex-shrink-0 mr-2">
-                        <Icon variant={icon} color={iconColor} />
+                        <Icon variant={icon} color={iconColor} width={16} height={16}/>
                     </div>
                 )}
 
                 <input
                     type="text"
                     placeholder={placeholder}
-                    className="flex-1 outline-none bg-white placeholder:text-gray-300 placeholder:text-[16px] placeholder:font-normal"
+                    className="flex-1 outline-none bg-white placeholder:text-gray-300 placeholder:text-p1 placeholder:font-normal"
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     onChange={handleInputChange}
@@ -48,7 +48,7 @@ const SearchBar = ({
                 {/* Renderizar el ícono condicionalmente a la derecha */}
                 {icon && iconPosition === 'right' && (
                     <div className="flex-shrink-0 ml-2">
-                        <Icon variant={icon} color={iconColor} />
+                        <Icon variant={icon} color={iconColor} width={16} height={16}/>
                     </div>
                 )}
             </div>

@@ -1,5 +1,7 @@
 import Icon from "../Icon";
 import Chip from "../Chip";
+import RecipeActions from "../RecipeActions";
+import {useState} from "react";
 
 export interface RecipeCardProps {
     recipeName: string;
@@ -14,7 +16,7 @@ const infoContainer = 'flex flex-row gap-4 items-center'
 const specificInfoContainer = 'flex flex-row gap-2 items-center'
 const infoText = 'text-p2 text-gray-800'
 const imageClass = 'object-cover w-full h-[200px] rounded-t-md'
-const containerClass = 'flex flex-col w-full gap-4 rounded-lg shadow-2xl pb-4'
+const containerClass = 'flex flex-col w-full gap-4 rounded-lg shadow-recipe-card pb-4 bg-white'
 const contentContainer = 'flex flex-col w-full gap-6 px-4'
 const titleContainer = 'flex flex-row w-full justify-between items-center'
 const titleText = 'text-h6 font-medium'
@@ -24,14 +26,24 @@ const chipsContainer = 'flex flex-row gap-2 overflow-x-auto'
 
 const RecipeCard = ({recipeName, recipeTimeInMin, recipeImg, recipePortions, recipeChips, optionsOnClick}: RecipeCardProps) => {
 
+    const [recipeActionsOpen, setRecipeActionsOpen] = useState(false);
+
+    const handleOptionsClick = () => {
+        setRecipeActionsOpen(!recipeActionsOpen);
+    }
+
+
     return (
         <div className={containerClass}>
             <img src={recipeImg} alt={'Recipe Photo'} className={imageClass}/>
             <div className={contentContainer}>
                 <div className={titleContainer}>
                     <p className={titleText}>{recipeName}</p>
-                    <div onClick={optionsOnClick}>
-                        <Icon color={'black'} variant={'three-dots'}/>
+                    <div className={'relative'}>
+                        <div onClick={handleOptionsClick}>
+                            <Icon color={'black'} variant={'three-dots'}/>
+                        </div>
+                        {recipeActionsOpen && <div className={'right-0 absolute'}><RecipeActions/></div>}
                     </div>
                 </div>
                 <div className={infoContainer}>
@@ -46,7 +58,7 @@ const RecipeCard = ({recipeName, recipeTimeInMin, recipeImg, recipePortions, rec
                     </div>
                 </div>
                     <div className={chipsContainer}>
-                        {recipeChips.map(chip => <Chip variant={'fulfilled'} label={chip}/>)}
+                        {recipeChips.map(chip => <Chip variant={'filled'} label={chip}/>)}
                     </div>
             </div>
         </div>
