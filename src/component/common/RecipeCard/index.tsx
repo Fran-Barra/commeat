@@ -25,7 +25,7 @@ const separator = 'text-p1 font-light'
 const chipsContainer = 'flex flex-row gap-2 overflow-x-auto'
 
 
-const RecipeCard = ({recipeName, recipeTimeInMin, recipeImg, recipePortions, recipeChips, optionsOnClick}: RecipeCardProps) => {
+const RecipeCard = ({recipeName, recipeTimeInMin, recipeImg, recipePortions, recipeChips}: RecipeCardProps) => {
 
     const [recipeActionsOpen, setRecipeActionsOpen] = useState(false);
     const navigate = useNavigate();

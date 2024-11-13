@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 const MyCalendar = () => {
     const [date, setDate] = useState<Date>(new Date());
 
+
     return (
         <div className="border-0 bg-gray-100 flex flex-col justify-items-center ">
             <span className="text-blue-500 font-light text-md bg-gray-100 w-full p-3 flex justify-center items-center">
